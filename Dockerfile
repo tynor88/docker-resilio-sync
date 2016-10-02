@@ -19,27 +19,27 @@ RUN \
 
  wget -q -P /tmp/ https://download-cdn.getsync.com/${RESILIO_SYNC_VERSION}/linux-x64/resilio-sync_x64.tar.gz && \
  mkdir -p /app/resilio-sync && \
- tar -xzvf /tmp/resilio-sync_x64.tar.gz -C /app/resilio-sync
- 
-# apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/community \
-#	shadow && \
- 
+ tar -xzvf /tmp/resilio-sync_x64.tar.gz -C /app/resilio-sync && \
+
+ apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/community \
+	shadow && \
+
 # cleanup
-# apk del --purge \
-#	build-dependencies && \
-# rm -rf \
-#	/tmp/* \
-#	/var/tmp/* \
-#	/var/cache/apk/*
+ apk del --purge \
+	build-dependencies && \
+ rm -rf \
+	/tmp/* \
+	/var/tmp/* \
+	/var/cache/apk/*
 
 # create abc user
-#RUN \
-#	groupmod -g 1000 users && \
-#	useradd -u 911 -U -d /config -s /bin/false abc && \
-#	usermod -G users abc && \
+RUN \
+	groupmod -g 1000 users && \
+	useradd -u 911 -U -d /config -s /bin/false abc && \
+	usermod -G users abc && \
 
 # create some files / folders
-#	mkdir -p /config /app /defaults \
+	mkdir -p /config /app /defaults \
 
 # add local files
 COPY root/ /
