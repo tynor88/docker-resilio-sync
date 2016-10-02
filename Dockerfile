@@ -12,11 +12,11 @@ ENV RESILIO_SYNC_VERSION="2.4.1"
 RUN \
  apk update && \
  apk add --no-cache --virtual=build-dependencies \
-	wget \
+	wget && \
 
- #wget -q -P /tmp/ https://download-cdn.getsync.com/${RESILIO_SYNC_VERSION}/linux-x64/resilio-sync_x64.tar.gz && \
- #mkdir -p /app/resilio-sync && \
- #tar -xzvf /tmp/resilio-sync_x64.tar.gz -C /app/resilio-sync \
+ wget -q -P /tmp/ https://download-cdn.getsync.com/${RESILIO_SYNC_VERSION}/linux-x64/resilio-sync_x64.tar.gz && \
+ mkdir -p /app/resilio-sync && \
+ tar -xzvf /tmp/resilio-sync_x64.tar.gz -C /app/resilio-sync
  
 # apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/community \
 #	shadow && \
