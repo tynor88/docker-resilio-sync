@@ -10,6 +10,12 @@ ENV RESILIO_SYNC_VERSION="2.4.1"
 
 # install build packages
 RUN \
+ apk update && \
+ apk add --no-cache --virtual=build-dependencies \
+	ca-certificates && \
+
+ update-ca-certificates && \
+
  wget -q -P /tmp/ https://download-cdn.getsync.com/${RESILIO_SYNC_VERSION}/linux-x64/resilio-sync_x64.tar.gz && \
  mkdir -p /app/resilio-sync && \
  tar -xzvf /tmp/resilio-sync_x64.tar.gz -C /app/resilio-sync
