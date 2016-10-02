@@ -12,7 +12,8 @@ ENV RESILIO_SYNC_VERSION="2.4.1"
 RUN \
  apk update && \
  apk add --no-cache --virtual=build-dependencies \
-	ca-certificates && \
+	ca-certificates \
+	wget && \
 
  update-ca-certificates && \
 
