@@ -49,8 +49,8 @@ RUN \
 # add local files
 COPY root/ /
 
-ENTRYPOINT ["/init"]
-
 EXPOSE 8888 55555
 
 VOLUME ["/config"]
+
+ENTRYPOINT ["/init"]
