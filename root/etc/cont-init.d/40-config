@@ -1,5 +1,8 @@
 #!/usr/bin/with-contenv sh
 
+# make config folder
+mkdir -p /config/.sync
+
 # move config file
 cp /defaults/resilio-sync.conf /config/resilio-sync.conf
 
@@ -8,3 +11,5 @@ chown -R abc:abc \
 	/app/resilio-sync
 chown abc:abc \
 	/config/resilio-sync.conf
+chown abc:abc \
+	/config/.sync
