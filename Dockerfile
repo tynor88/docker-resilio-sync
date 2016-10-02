@@ -39,7 +39,7 @@ RUN \
 	usermod -G users abc && \
 
 # create some files / folders
-	mkdir -p /config /app /defaults \
+	mkdir -p /config /app /defaults
 
 # add local files
 COPY root/ /
