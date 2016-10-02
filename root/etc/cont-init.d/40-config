@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv sh
+
+# move config file
+cp -n /defaults/resilio-sync.conf /config/resilio-sync.conf
+
+# permissions
+chown -R abc:abc \
+	/app/resilio-sync
+chown abc:abc \
+	/config/resilio-sync.conf
