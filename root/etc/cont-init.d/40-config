@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv sh
 
 # move config file
-cp -n /defaults/resilio-sync.conf /config/resilio-sync.conf
+cp /defaults/resilio-sync.conf /config/resilio-sync.conf
 
 # permissions
 chown -R abc:abc \
