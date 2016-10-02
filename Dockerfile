@@ -6,16 +6,16 @@ ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 ENV S6_KEEP_ENV=1
 
 # resilio-sync enviroment settings
-ENV RESILIO_VERSION="2.4.1"
+ENV RESILIO_SYNC_VERSION="2.4.1"
 
 # install build packages
 RUN \
  apk update && \
  apk add --no-cache --virtual=build-dependencies \
- wget && \
+	wget && \
 
  cd tmp && \
- wget -q https://download-cdn.getsync.com/${RESILIO_VERSION}/linux-x64/resilio-sync_x64.tar.gz && \
+ wget -q https://download-cdn.getsync.com/${RESILIO_SYNC_VERSION}/linux-x64/resilio-sync_x64.tar.gz && \
  mkdir -p /app/resilio-sync && \
  tar -xzvf /tmp/resilio-sync_x64.tar.gz -C /app/resilio-sync && \
  
