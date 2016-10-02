@@ -12,7 +12,7 @@ ENV RESILIO_SYNC_VERSION="2.4.1"
 RUN \
  apk update && \
  apk add --no-cache --virtual=build-dependencies \
-	wget && \
+	wget \
 
  #wget -q -P /tmp/ https://download-cdn.getsync.com/${RESILIO_SYNC_VERSION}/linux-x64/resilio-sync_x64.tar.gz && \
  #mkdir -p /app/resilio-sync && \
@@ -36,7 +36,7 @@ RUN \
 #	usermod -G users abc && \
 
 # create some files / folders
-#	mkdir -p /config /app /defaults
+#	mkdir -p /config /app /defaults \
 
 # add local files
 COPY root/ /
