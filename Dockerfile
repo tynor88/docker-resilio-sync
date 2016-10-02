@@ -30,15 +30,16 @@ RUN \
  rm -rf \
 	/tmp/* \
 	/var/tmp/* \
-	/var/cache/apk/* && \
+	/var/cache/apk/* 
 
 # create abc user
- groupmod -g 1000 users && \
- useradd -u 911 -U -d /config -s /bin/false abc && \
- usermod -G users abc && \
+RUN \
+	groupmod -g 1000 users && \
+	useradd -u 911 -U -d /config -s /bin/false abc && \
+	usermod -G users abc && \
 
 # create some files / folders
- mkdir -p /config /app /defaults
+	mkdir -p /config /app /defaults
 
 # add local files
 COPY root/ /
