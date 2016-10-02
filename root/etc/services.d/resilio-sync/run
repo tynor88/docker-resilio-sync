@@ -6,4 +6,4 @@ CONF_PATH="/config/resilio-sync.conf"
 umask 022
 
 exec \
-	s6-setuidgid abc "$APP_PATH"/resilio --config "$CONF_PATH" --nodaemon
+	s6-setuidgid abc "$APP_PATH"/rslsync --config "$CONF_PATH" --nodaemon
