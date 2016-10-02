@@ -12,7 +12,7 @@ ENV RESILIO_VERSION="2.4.1"
 RUN \
  apk update && \
  apk add --no-cache --virtual=build-dependencies \
- wget \
+ wget && \
 
  cd tmp && \
  wget -q https://download-cdn.getsync.com/${RESILIO_VERSION}/linux-x64/resilio-sync_x64.tar.gz && \
